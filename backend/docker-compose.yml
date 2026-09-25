@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  netguard-backend:
+    build: .
+    container_name: netguard_sentinel_backend
+    restart: always
+    network_mode: "host"
+    environment:
+      - DATABASE_URL=sqlite:///./netguard.db
+      - TELEGRAM_BOT_TOKEN=
+      - TELEGRAM_CHAT_ID=
+      - SLACK_WEBHOOK_URL=
+    volumes:
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

@@ -1,0 +1,6 @@
+{
+  "name": "NetGuard",
+  "description": "Enterprise Network & Device Guard - 24/7 network & device monitoring, rogue device detection, server metrics, interactive topology map, and automated remediation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
